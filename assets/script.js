@@ -5,21 +5,23 @@ $(document).ready(function() {
 $(".saveBtn").on("click", function () {
     var textBlock = $(this).siblings(".description").val();
     var timeBlock = $(this).parent().attr("id");
-}
-localStorage.setItem(timeBlock, textBlock)
+})});
+localStorage.setItem(timeBlock, textBlock);
 
-)});
+
+function trackTime() {
+    var currentTime = moment().hour();
 
 //timeblock loop
 $(".time-block").each(function()   {
     var timeBlock = parseInt($(this).attr("id").split("hour")[1]);
 
-    if (timeBlock < timeNow) {
+    if (timeBlock < currentTime) {
         $(this).remoceClass("future");
         $(this).removeClass("present");
         $(this).removeClass("past");
     }
-    else if (timeBlockblock === timeNow) {
+    else if (timeBlock === currentTime) {
         $(this).removeClass("past");
             $(this).removeClass("future");
             $(this).addClass("present"); 
@@ -29,4 +31,4 @@ $(".time-block").each(function()   {
         $(this).removeClass("past");
         $(this).addClass("future");
     }
-});
+})};
