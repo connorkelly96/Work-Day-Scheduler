@@ -1,12 +1,15 @@
-var currentDay = moment().format('dddd, MMM Do YYYY');
+var saveButton = document.getElementsByClassName("saveBtn");
+var currentDay = moment().format('MMMM Do YYYY, h:mm:ss a');
 $("#currentDay").html(currentDay);
 //saveBtn
 $(document).ready(function() {
 $(".saveBtn").on("click", function () {
     var textBlock = $(this).siblings(".description").val();
     var timeBlock = $(this).parent().attr("id");
-})});
+
 localStorage.setItem(timeBlock, textBlock);
+});
+});
 
 
 function trackTime() {
@@ -44,3 +47,10 @@ $("#hour-3 .description").val(localStorage.getItem("hour-3"));
 $("#hour-4 .description").val(localStorage.getItem("hour-4"));
 $("#hour-5 .description").val(localStorage.getItem("hour-5"));
 trackTime();
+
+ 
+var appointment = document.getElementById('span');
+appointment.textContent = 'Appointment Added to localStorage✅';
+saveButton.appendChild(appointment);
+
+saveButton.addEventListener('click', appointment);
