@@ -35,7 +35,7 @@ $(".time-block").each(function()   {
         $(this).addClass("future");
     }
 })};
-
+//retreiving items from local storage
 $("#hour-8 .description").val(localStorage.getItem("hour-8"));
 $("#hour-9 .description").val(localStorage.getItem("hour-9"));
 $("#hour-10 .description").val(localStorage.getItem("hour-10"));
@@ -49,8 +49,4 @@ $("#hour-5 .description").val(localStorage.getItem("hour-5"));
 trackTime();
 
  
-var appointment = document.getElementById('span');
-appointment.textContent = 'Appointment Added to localStorage✅';
-saveButton.appendChild(appointment);
 
-saveButton.addEventListener('click', appointment);
