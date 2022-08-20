@@ -20,7 +20,7 @@ $(".time-block").each(function()   {
     var timeBlock = parseInt($(this).attr("id").split("hour")[1]);
 
     if (timeBlock < currentTime) {
-        $(this).remoceClass("future");
+        $(this).removeClass("future");
         $(this).removeClass("present");
         $(this).removeClass("past");
     }
